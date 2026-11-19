@@ -1,0 +1,20 @@
+name: Hola mundo
+
+on: [push]
+
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v7
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Ejecutar hello-world.ts
+        run: node hello-world.ts
+        
